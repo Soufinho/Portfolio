@@ -136,24 +136,41 @@
         .exp-desc { font-size: 0.92rem; color: rgba(240,237,232,0.6); line-height: 1.85; margin-bottom: 1.2rem; }
         .exp-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
         .exp-chip { font-size: 0.75rem; padding: 0.2rem 0.7rem; background: var(--surface2); color: var(--muted); border-radius: 2px; border: 1px solid var(--border); }
-        .real-grid { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
-        .real-card { background: var(--bg); padding: 1.8rem 2.5rem; display: grid; grid-template-columns: 2.5rem 1fr 8rem 1.4fr; gap: 2rem; align-items: center; transition: background 0.25s; cursor: pointer; }
-        .real-card:hover { background: var(--surface); }
-        .real-card.hdr { padding: 0.8rem 2.5rem; background: var(--surface2) !important; cursor: default; }
-        .real-num { font-family: var(--serif); font-size: 1rem; font-weight: 800; color: var(--muted); transition: color 0.25s; }
-        .real-card:hover .real-num { color: var(--accent); }
-        .real-title { font-size: 0.95rem; font-weight: 500; color: var(--text); }
-        .real-sub { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
-        .real-period { font-size: 0.8rem; color: var(--muted); }
-        .comp-badges { display: flex; flex-wrap: wrap; gap: 0.3rem; }
-        .cbadge { font-size: 0.68rem; font-weight: 500; padding: 0.18rem 0.55rem; border-radius: 2px; letter-spacing: 0.02em; }
-        .cbadge-a { background: rgba(200,255,0,0.1); color: var(--accent); border: 1px solid rgba(200,255,0,0.2); }
-        .cbadge-b { background: var(--surface2); color: var(--muted); border: 1px solid var(--border); }
-        .col-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-        .real-details { display: none; background: var(--surface); padding: 1.2rem 2.5rem 1.4rem 7.5rem; border-top: 1px solid var(--border); font-size: 0.84rem; color: rgba(240,237,232,0.55); line-height: 1.8; }
-        .real-details.open { display: block; }
-        .rd-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.7rem; }
-        .rd-tag { font-size: 0.72rem; padding: 0.15rem 0.55rem; background: var(--bg); border: 1px solid var(--border); color: var(--muted); border-radius: 2px; }
+
+        /* ── TABLEAU DE SYNTHÈSE ── */
+        .synth-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin-bottom: 2.5rem; }
+        .synth-meta-item { background: var(--bg); padding: 1.2rem 1.8rem; }
+        .synth-meta-label { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem; }
+        .synth-meta-val { font-size: 0.9rem; color: var(--text); font-weight: 500; }
+        .synth-meta-val a { color: var(--accent); text-decoration: none; font-size: 0.8rem; }
+        .synth-meta-val a:hover { text-decoration: underline; }
+
+        .synth-table-wrap { overflow-x: auto; border: 1px solid var(--border); margin-bottom: 2rem; }
+        .synth-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+        .synth-table th, .synth-table td { border: 1px solid var(--border); padding: 0.75rem 1rem; text-align: left; vertical-align: top; }
+        .synth-table thead tr:first-child th { background: var(--surface2); font-family: var(--serif); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.04em; color: var(--text); }
+        .synth-table thead tr:last-child th { background: var(--surface); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 500; padding: 0.6rem 1rem; }
+        .synth-table thead tr:last-child th.comp-h { font-size: 0.62rem; writing-mode: horizontal-tb; }
+        .synth-table tbody tr { transition: background 0.2s; }
+        .synth-table tbody tr:hover { background: var(--surface); }
+        .synth-table tbody tr.group-header td { background: var(--surface2); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 600; padding: 0.5rem 1rem; border-color: var(--border-bright); }
+        .synth-table tbody td.real-name { font-weight: 500; color: var(--text); font-size: 0.82rem; min-width: 180px; }
+        .synth-table tbody td.period { color: var(--muted); font-size: 0.75rem; white-space: nowrap; }
+        .check-cell { text-align: center; }
+        .check { display: inline-block; width: 18px; height: 18px; background: var(--accent-dim); border: 1px solid rgba(200,255,0,0.4); border-radius: 2px; color: var(--accent); font-size: 0.75rem; line-height: 18px; text-align: center; }
+
+        .synth-dl-bar { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; border: 1px solid var(--border); padding: 1.4rem 2rem; background: var(--surface); flex-wrap: wrap; }
+        .synth-dl-info { display: flex; flex-direction: column; }
+        .synth-dl-title { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--text); }
+        .synth-dl-sub { font-size: 0.75rem; color: var(--muted); margin-top: 0.15rem; }
+        .synth-dl-btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.75rem 1.6rem; background: var(--accent); color: #000; font-weight: 600; font-size: 0.82rem; border-radius: 2px; text-decoration: none; border: none; cursor: pointer; transition: opacity 0.2s, transform 0.2s; font-family: var(--body); white-space: nowrap; }
+        .synth-dl-btn:hover { opacity: 0.88; transform: translateY(-1px); }
+
+        /* compétences legend */
+        .comp-legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-bottom: 2rem; }
+        .comp-legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; color: var(--muted); }
+        .comp-legend-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
         .veille-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border: 1px solid var(--border); }
         .veille-card { background: var(--bg); padding: 3rem; position: relative; overflow: hidden; transition: background 0.3s; }
         .veille-card:hover { background: var(--surface); }
@@ -164,9 +181,6 @@
         .v-desc { font-size: 0.88rem; color: rgba(240,237,232,0.55); line-height: 1.8; }
         .v-tools { display: flex; gap: 0.6rem; margin-top: 1.2rem; }
         .v-tool { font-size: 0.75rem; padding: 0.3rem 0.8rem; border: 1px solid rgba(200,255,0,0.3); color: var(--accent); border-radius: 2px; background: var(--accent-dim); }
-        .id-block { margin-top: 1.5rem; border: 1px solid var(--border); padding: 1.5rem; background: var(--bg); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
-        .id-link { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.4rem; background: var(--accent); color: #000; font-weight: 500; font-size: 0.82rem; border-radius: 2px; text-decoration: none; transition: opacity 0.2s; }
-        .id-link:hover { opacity: 0.85; }
         .cv-block { display: flex; flex-direction: column; align-items: center; padding: 7rem 4rem; text-align: center; gap: 2rem; border-top: 1px solid var(--border); position: relative; overflow: hidden; }
         .cv-glow { position: absolute; bottom: -100px; left: 50%; transform: translateX(-50%); width: 500px; height: 300px; background: radial-gradient(ellipse, rgba(200,255,0,0.1), transparent 70%); filter: blur(40px); pointer-events: none; }
         .cv-title { font-family: var(--serif); font-size: clamp(2.5rem,6vw,4rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
@@ -188,9 +202,7 @@
             .section-inner { padding: 4rem 1.5rem; }
             .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
             .skills-layout { grid-template-columns: 1fr 1fr; }
-            .real-card { grid-template-columns: 1fr; gap: 0.6rem; }
-            .real-card.hdr { display: none; }
-            .real-details { padding-left: 1.5rem; }
+            .synth-meta { grid-template-columns: 1fr; }
             .veille-layout { grid-template-columns: 1fr; }
             .exp-item { grid-template-columns: 1fr; gap: 0.8rem; }
             footer { padding: 2rem 1.5rem; }
@@ -224,7 +236,7 @@
         <div>
             <div class="hero-eyebrow">
                 <div class="hero-dot"></div>
-                BTS SIO — Option SLAM — Session 2025 — Lycée Robert Schuman, Dugny
+                BTS SIO — Option SLAM — Session 2026 — Lycée Robert Schuman, Dugny
             </div>
             <h1 class="hero-name">
                 Soufiane<br><span class="muted">Ouhaimmed</span>
@@ -240,7 +252,7 @@
     </div>
     <div class="hero-stats">
         <div class="hero-stat">
-            <div class="stat-num">6<span>+</span></div>
+            <div class="stat-num">10<span>+</span></div>
             <div class="stat-label">Réalisations professionnelles</div>
         </div>
         <div class="hero-stat">
@@ -341,12 +353,12 @@
         <div class="reveal">
             <div class="exp-item">
                 <div>
-                    <div class="exp-period">2024 — 2025</div>
+                    <div class="exp-period">Mai 2025 — Juin 2025</div>
                     <div class="exp-org">Préfecture de Bobigny</div>
                     <div class="exp-loc">Seine-Saint-Denis, 93</div>
                 </div>
                 <div>
-                    <div class="exp-role">Stagiaire — Support informatique</div>
+                    <div class="exp-role">Stagiaire — HelpDesk / Support informatique</div>
                     <div class="exp-desc">Stage en environnement institutionnel. Gestion du parc informatique, prise en charge des incidents utilisateurs, diagnostic matériel/logiciel, gestion des droits NTFS et accompagnement des utilisateurs. Découverte des contraintes d'un SI institutionnel et des enjeux de continuité de service.</div>
                     <div class="exp-chips">
                         <span class="exp-chip">Support utilisateurs</span>
@@ -362,87 +374,218 @@
     </div>
 </section>
 
+<!-- ══════════════════════════════════════════
+     SECTION 04 — TABLEAU DE SYNTHÈSE E5
+     ══════════════════════════════════════════ -->
 <section id="real">
     <div class="section-inner">
         <div class="section-header reveal">
             <span class="s-num">04</span>
-            <h2 class="s-title">Réalisations <em>professionnelles</em></h2>
+            <h2 class="s-title">Tableau de synthèse <em>des réalisations — Épreuve E5</em></h2>
         </div>
-        <p class="reveal" style="color:var(--muted);font-size:0.84rem;margin-top:-2.5rem;margin-bottom:2rem;">Cliquer sur une ligne pour afficher le détail des productions associées.</p>
-        <div class="real-grid reveal">
-            <div class="real-card hdr">
-                <div class="col-label">#</div>
-                <div class="col-label">Réalisation</div>
-                <div class="col-label">Période</div>
-                <div class="col-label">Compétences mobilisées</div>
-            </div>
 
-            <div class="real-card" onclick="toggleReal(this)">
-                <div class="real-num">01</div>
-                <div><div class="real-title">Gestion du parc informatique</div><div class="real-sub">Préfecture de Bobigny</div></div>
-                <div class="real-period">2024</div>
-                <div class="comp-badges"><span class="cbadge cbadge-a">Gérer le patrimoine</span><span class="cbadge cbadge-a">Répondre aux incidents</span></div>
+        <!-- Métadonnées -->
+        <div class="synth-meta reveal">
+            <div class="synth-meta-item">
+                <div class="synth-meta-label">Candidat</div>
+                <div class="synth-meta-val">Ouhaimmed Soufiane</div>
             </div>
-            <div class="real-details">
-                Inventaire exhaustif du parc, mise à jour du registre des actifs, intervention sur incidents matériels/logiciels, rédaction de fiches d'intervention.
-                <div class="rd-tags"><span class="rd-tag">Rapport d'inventaire</span><span class="rd-tag">Fiches d'intervention</span><span class="rd-tag">Tableau de suivi parc</span></div>
+            <div class="synth-meta-item">
+                <div class="synth-meta-label">Formation</div>
+                <div class="synth-meta-val">BTS SIO — Option SLAM — Session 2026</div>
             </div>
-
-            <div class="real-card" onclick="toggleReal(this)">
-                <div class="real-num">02</div>
-                <div><div class="real-title">Application web Symfony</div><div class="real-sub">Projet scolaire</div></div>
-                <div class="real-period">2024</div>
-                <div class="comp-badges"><span class="cbadge cbadge-a">Mettre à disposition un service</span><span class="cbadge cbadge-a">Travailler en mode projet</span></div>
+            <div class="synth-meta-item">
+                <div class="synth-meta-label">Centre de formation</div>
+                <div class="synth-meta-val">Lycée Robert Schuman / BTS SIO, Dugny</div>
             </div>
-            <div class="real-details">
-                Développement d'une application MVC complète avec Symfony : authentification, gestion de rôles, CRUD, intégration MySQL. Travail en équipe avec Git/GitHub.
-                <div class="rd-tags"><span class="rd-tag">Code source GitHub</span><span class="rd-tag">Documentation technique</span><span class="rd-tag">Cahier des charges</span><span class="rd-tag">Rapport de tests</span></div>
+            <div class="synth-meta-item">
+                <div class="synth-meta-label">Portfolio</div>
+                <div class="synth-meta-val"><a href="https://soufinho.github.io/Portfolio/" target="_blank">soufinho.github.io/Portfolio/ ↗</a></div>
             </div>
-
-            <div class="real-card" onclick="toggleReal(this)">
-                <div class="real-num">03</div>
-                <div><div class="real-title">Gestion droits &amp; habilitations</div><div class="real-sub">Préfecture de Bobigny</div></div>
-                <div class="real-period">2024</div>
-                <div class="comp-badges"><span class="cbadge cbadge-a">Gérer le patrimoine informatique</span></div>
+            <div class="synth-meta-item">
+                <div class="synth-meta-label">Option cochée</div>
+                <div class="synth-meta-val">☑ SLAM &nbsp; ▢ SISR</div>
             </div>
-            <div class="real-details">
-                Mise en place et vérification des niveaux d'habilitation NTFS sur les partages réseau Windows. Contrôle de la conformité des accès selon les rôles définis.
-                <div class="rd-tags"><span class="rd-tag">Procédures NTFS</span><span class="rd-tag">Documentation droits</span><span class="rd-tag">Matrice des habilitations</span></div>
-            </div>
-
-            <div class="real-card" onclick="toggleReal(this)">
-                <div class="real-num">04</div>
-                <div><div class="real-title">Application JavaFX de gestion</div><div class="real-sub">Projet scolaire</div></div>
-                <div class="real-period">2023 — 2024</div>
-                <div class="comp-badges"><span class="cbadge cbadge-a">Mettre à disposition un service</span><span class="cbadge cbadge-a">Travailler en mode projet</span></div>
-            </div>
-            <div class="real-details">
-                Application desktop Java avec interface graphique JavaFX, connexion MySQL, gestion CRUD et diagrammes UML (use case, classes).
-                <div class="rd-tags"><span class="rd-tag">Code source Java</span><span class="rd-tag">Diagramme UML</span><span class="rd-tag">Manuel utilisateur</span><span class="rd-tag">BDD MySQL</span></div>
-            </div>
-
-            <div class="real-card" onclick="toggleReal(this)">
-                <div class="real-num">05</div>
-                <div><div class="real-title">Site web dynamique PHP/MySQL</div><div class="real-sub">Projet scolaire</div></div>
-                <div class="real-period">2023 — 2024</div>
-                <div class="comp-badges"><span class="cbadge cbadge-a">Développer la présence en ligne</span><span class="cbadge cbadge-a">Mettre à disposition un service</span></div>
-            </div>
-            <div class="real-details">
-                Conception et développement d'un site web dynamique : modélisation BDD (MCD/MLD), intégration HTML/CSS/JS, back-end PHP, tests d'acceptation.
-                <div class="rd-tags"><span class="rd-tag">Code PHP/MySQL</span><span class="rd-tag">MCD/MLD</span><span class="rd-tag">Rapport de tests</span><span class="rd-tag">Maquette UI</span></div>
-            </div>
-
-            <div class="real-card" onclick="toggleReal(this)">
-                <div class="real-num">06</div>
-                <div><div class="real-title">Veille — IA &amp; Jeux vidéo</div><div class="real-sub">Développement professionnel</div></div>
-                <div class="real-period">2023 — 2025</div>
-                <div class="comp-badges"><span class="cbadge cbadge-a">Organiser son développement professionnel</span></div>
-            </div>
-            <div class="real-details">
-                Veille régulière sur l'IA dans les jeux vidéo : PNJ procéduraux, génération de contenu, LLMs dans les moteurs de jeu. Synthèse et partage sur LinkedIn.
-                <div class="rd-tags"><span class="rd-tag">Flux Feedly</span><span class="rd-tag">Daily.dev</span><span class="rd-tag">Synthèse de veille</span><span class="rd-tag">Profil LinkedIn</span></div>
+            <div class="synth-meta-item">
+                <div class="synth-meta-label">Réalisations totales</div>
+                <div class="synth-meta-val">11 réalisations (formation + stage)</div>
             </div>
         </div>
+
+        <!-- Légende compétences -->
+        <div class="comp-legend reveal">
+            <div class="comp-legend-item"><div class="comp-legend-dot"></div> C1 — Gérer le patrimoine informatique</div>
+            <div class="comp-legend-item"><div class="comp-legend-dot" style="background:#88ccff"></div> C2 — Répondre aux incidents et demandes</div>
+            <div class="comp-legend-item"><div class="comp-legend-dot" style="background:#ffaa44"></div> C3 — Développer la présence en ligne</div>
+            <div class="comp-legend-item"><div class="comp-legend-dot" style="background:#ff88cc"></div> C4 — Travailler en mode projet</div>
+            <div class="comp-legend-item"><div class="comp-legend-dot" style="background:#aa88ff"></div> C5 — Mettre à disposition un service</div>
+            <div class="comp-legend-item"><div class="comp-legend-dot" style="background:#44ffcc"></div> C6 — Organiser son développement professionnel</div>
+        </div>
+
+        <!-- Tableau -->
+        <div class="synth-table-wrap reveal">
+            <table class="synth-table">
+                <thead>
+                <tr>
+                    <th rowspan="2" style="min-width:190px;">Réalisation professionnelle</th>
+                    <th rowspan="2" style="min-width:120px;">Période</th>
+                    <th class="comp-h" title="Gérer le patrimoine informatique">C1</th>
+                    <th class="comp-h" title="Répondre aux incidents et demandes">C2</th>
+                    <th class="comp-h" title="Développer la présence en ligne">C3</th>
+                    <th class="comp-h" title="Travailler en mode projet">C4</th>
+                    <th class="comp-h" title="Mettre à disposition un service">C5</th>
+                    <th class="comp-h" title="Organiser son développement professionnel">C6</th>
+                </tr>
+                <tr>
+                    <th class="comp-h" style="font-size:0.6rem;color:var(--accent);">Patrimoine</th>
+                    <th class="comp-h" style="font-size:0.6rem;color:#88ccff;">Incidents</th>
+                    <th class="comp-h" style="font-size:0.6rem;color:#ffaa44;">Présence web</th>
+                    <th class="comp-h" style="font-size:0.6rem;color:#ff88cc;">Projet</th>
+                    <th class="comp-h" style="font-size:0.6rem;color:#aa88ff;">Service</th>
+                    <th class="comp-h" style="font-size:0.6rem;color:#44ffcc;">Dév. pro</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- FORMATION -->
+                <tr class="group-header">
+                    <td colspan="8">Réalisations en cours de formation</td>
+                </tr>
+                <tr>
+                    <td class="real-name">WebCinema <span style="color:var(--muted);font-size:0.72rem;">PHP</span></td>
+                    <td class="period">10/01/25 → 12/03/25</td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="real-name">StartJavaFX <span style="color:var(--muted);font-size:0.72rem;">Java / JavaFX</span></td>
+                    <td class="period">06/03/25 → 09/05/25</td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="real-name">ZOO <span style="color:var(--muted);font-size:0.72rem;">Java</span></td>
+                    <td class="period">19/02/25 → 26/02/25</td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="real-name">Jeu de la vie <span style="color:var(--muted);font-size:0.72rem;">Java</span></td>
+                    <td class="period">27/12/24 → 28/12/24</td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="real-name">Aeroport <span style="color:var(--muted);font-size:0.72rem;">PHP</span></td>
+                    <td class="period">26/03/25 → 09/05/25</td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="real-name">TicTacToe <span style="color:var(--muted);font-size:0.72rem;">Java</span></td>
+                    <td class="period">12/12/24</td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="real-name">Nuit2Info 2024 <span style="color:var(--muted);font-size:0.72rem;">PHP · HTML · JS</span></td>
+                    <td class="period">05/12/24 → 06/12/24</td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="real-name">GestionHotel <span style="color:var(--muted);font-size:0.72rem;">Java</span></td>
+                    <td class="period">23/01/25 → 30/01/25</td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="real-name">HSP <span style="color:var(--muted);font-size:0.72rem;">PHP · Symfony</span></td>
+                    <td class="period">09/09/25 → 09/12/25</td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                </tr>
+                <tr>
+                    <td class="real-name">HSP <span style="color:var(--muted);font-size:0.72rem;">Java</span></td>
+                    <td class="period">06/01/26 → 31/03/26</td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                </tr>
+                <!-- STAGE -->
+                <tr class="group-header">
+                    <td colspan="8">Réalisations en milieu professionnel — Première année</td>
+                </tr>
+                <tr>
+                    <td class="real-name">Stage Préfecture de Bobigny <span style="color:var(--muted);font-size:0.72rem;">HelpDesk</span></td>
+                    <td class="period">Mai 2025 → Juin 2025</td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                    <td class="check-cell"><span class="check">✓</span></td>
+                </tr>
+                <!-- 2e année milieu pro vide -->
+                <tr class="group-header">
+                    <td colspan="8">Réalisations en milieu professionnel — Seconde année</td>
+                </tr>
+                <tr>
+                    <td class="real-name" style="color:var(--muted);font-style:italic;">À compléter</td>
+                    <td class="period" style="color:var(--muted);">—</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Barre téléchargement -->
+        <div class="synth-dl-bar reveal">
+            <div class="synth-dl-info">
+                <div class="synth-dl-title">Tableau de synthèse — Épreuve E5</div>
+                <div class="synth-dl-sub">BTS SIO SLAM · Session 2026 · Ouhaimmed Soufiane · Format Excel (.xlsx)</div>
+            </div>
+            <button class="synth-dl-btn" onclick="downloadSynthese()">↓ Télécharger le tableau (.xlsx)</button>
+        </div>
+
     </div>
 </section>
 
@@ -460,19 +603,6 @@
                 <div class="v-desc">Suivi régulier des avancées de l'IA appliquée au jeu vidéo : comportements procéduraux de PNJ, génération de contenu, pathfinding avancé, intégration de LLMs dans les moteurs de jeu. Lecture de publications techniques et articles de recherche.</div>
                 <div class="v-tools"><span class="v-tool">Feedly</span><span class="v-tool">Daily.dev</span></div>
             </div>
-            <div class="veille-card">
-                <div class="veille-accent"></div>
-                <div class="v-icon">◎</div>
-                <div class="v-title">Identité professionnelle en ligne</div>
-                <div class="v-desc">Maintien d'un profil LinkedIn actif, partage de découvertes technologiques et positionnement comme développeur junior en formation. Participation à la communauté tech.</div>
-                <div class="id-block">
-                    <div>
-                        <div style="font-family:var(--serif);font-size:1.05rem;font-weight:700;">Soufiane Ouhaimmed</div>
-                        <div style="font-size:0.78rem;color:var(--muted);">BTS SIO SLAM · Développeur en formation</div>
-                    </div>
-                    <a href="https://www.linkedin.com/in/soufiane-ouhaimmed-737890342/" target="_blank" class="id-link">Voir le profil →</a>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -480,12 +610,12 @@
 <div id="cv" class="cv-block">
     <div class="cv-glow"></div>
     <div class="cv-title reveal">Télécharger<br>mon CV</div>
-    <p class="cv-sub reveal">Curriculum Vitæ complet — BTS SIO SLAM — Session 2025</p>
+    <p class="cv-sub reveal">Curriculum Vitæ complet — BTS SIO SLAM — Session 2026</p>
     <button class="cv-btn reveal" onclick="downloadCV()">↓ Télécharger le CV</button>
 </div>
 
 <footer>
-    <span>Soufiane Ouhaimmed — Portfolio BTS SIO SLAM 2025</span>
+    <span>Soufiane Ouhaimmed — Portfolio BTS SIO SLAM 2026</span>
     <div style="display:flex;gap:1.5rem;">
         <a href="mailto:souhaimmed@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/soufiane-ouhaimmed-737890342/" target="_blank">LinkedIn</a>
@@ -495,6 +625,7 @@
 </footer>
 
 <script>
+    /* cursor */
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursor-ring');
     let mx=0,my=0,rx=0,ry=0;
@@ -505,40 +636,103 @@
         ring.style.left=rx+'px';ring.style.top=ry+'px';
         requestAnimationFrame(anim);
     })();
-    document.querySelectorAll('a,button,.real-card,.skill-card').forEach(el=>{
+    document.querySelectorAll('a,button,.skill-card').forEach(el=>{
         el.addEventListener('mouseenter',()=>{cursor.style.width='18px';cursor.style.height='18px';ring.style.width='54px';ring.style.height='54px';ring.style.opacity='0.5';});
         el.addEventListener('mouseleave',()=>{cursor.style.width='10px';cursor.style.height='10px';ring.style.width='36px';ring.style.height='36px';ring.style.opacity='1';});
     });
+
+    /* scroll progress */
     window.addEventListener('scroll',()=>{
         const h=document.documentElement;
         document.getElementById('progress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
     });
+
+    /* reveal on scroll */
     const obs=new IntersectionObserver(entries=>{
         entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*70);obs.unobserve(e.target);}});
     },{threshold:0.08});
     document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
-    function toggleReal(card){
-        const next=card.nextElementSibling;
-        if(!next||!next.classList.contains('real-details'))return;
-        const open=next.classList.contains('open');
-        document.querySelectorAll('.real-details.open').forEach(d=>d.classList.remove('open'));
-        if(!open)next.classList.add('open');
+
+    /* télécharger tableau de synthèse (HTML imprimable) */
+    function downloadSynthese() {
+        const h = `<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8"><title>Tableau de Synthèse E5 — Ouhaimmed Soufiane</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Arial',sans-serif;font-size:11px;line-height:1.4;padding:20px;color:#111}
+h1{font-size:14px;font-weight:bold;margin-bottom:4px}
+.sub{font-size:10px;color:#555;margin-bottom:16px}
+table{width:100%;border-collapse:collapse;margin-bottom:16px}
+th,td{border:1px solid #ccc;padding:5px 7px;text-align:left;vertical-align:top}
+thead tr:first-child th{background:#222;color:#fff;font-size:10px}
+thead tr:last-child th{background:#f5f5f5;font-size:9px;color:#555;text-align:center}
+.group{background:#eee;font-weight:bold;font-size:9px;letter-spacing:0.05em;text-transform:uppercase}
+.check{text-align:center;font-size:12px;color:#2a7a00}
+.meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px;border:1px solid #ddd;padding:10px}
+.meta-item label{font-size:8px;text-transform:uppercase;color:#888;display:block}
+.meta-item span{font-size:10px;font-weight:500}
+</style>
+</head><body>
+<h1>Tableau de synthèse des réalisations professionnelles — Épreuve E5</h1>
+<div class="sub">BTS SIO SLAM · Session 2026 · Lycée Robert Schuman, Dugny</div>
+<div class="meta">
+  <div class="meta-item"><label>Candidat</label><span>Ouhaimmed Soufiane</span></div>
+  <div class="meta-item"><label>Option</label><span>☑ SLAM</span></div>
+  <div class="meta-item"><label>Portfolio</label><span>soufinho.github.io/Portfolio/</span></div>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Réalisation professionnelle</th>
+      <th rowspan="2">Période</th>
+      <th>C1</th><th>C2</th><th>C3</th><th>C4</th><th>C5</th><th>C6</th>
+    </tr>
+    <tr>
+      <th>Patrimoine</th><th>Incidents</th><th>Présence web</th><th>Projet</th><th>Service</th><th>Dév. pro</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="8" class="group">Réalisations en cours de formation</td></tr>
+    <tr><td>WebCinema — PHP</td><td>10/01/25 → 12/03/25</td><td class="check">X</td><td class="check">X</td><td></td><td class="check">X</td><td></td><td class="check">X</td></tr>
+    <tr><td>StartJavaFX — Java / JavaFX</td><td>06/03/25 → 09/05/25</td><td class="check">X</td><td></td><td></td><td class="check">X</td><td></td><td class="check">X</td></tr>
+    <tr><td>ZOO — Java</td><td>19/02/25 → 26/02/25</td><td class="check">X</td><td></td><td></td><td class="check">X</td><td></td><td class="check">X</td></tr>
+    <tr><td>Jeu de la vie — Java</td><td>27/12/24 → 28/12/24</td><td class="check">X</td><td></td><td></td><td class="check">X</td><td></td><td class="check">X</td></tr>
+    <tr><td>Aeroport — PHP</td><td>26/03/25 → 09/05/25</td><td class="check">X</td><td class="check">X</td><td></td><td class="check">X</td><td></td><td class="check">X</td></tr>
+    <tr><td>TicTacToe — Java</td><td>12/12/24</td><td class="check">X</td><td></td><td></td><td class="check">X</td><td></td><td class="check">X</td></tr>
+    <tr><td>Nuit2Info 2024 — PHP · HTML · JS</td><td>05/12/24 → 06/12/24</td><td class="check">X</td><td></td><td></td><td class="check">X</td><td></td><td class="check">X</td></tr>
+    <tr><td>GestionHotel — Java</td><td>23/01/25 → 30/01/25</td><td class="check">X</td><td></td><td></td><td class="check">X</td><td></td><td class="check">X</td></tr>
+    <tr><td>HSP — PHP · Symfony</td><td>09/09/25 → 09/12/25</td><td class="check">X</td><td class="check">X</td><td class="check">X</td><td class="check">X</td><td class="check">X</td><td class="check">X</td></tr>
+    <tr><td>HSP — Java</td><td>06/01/26 → 31/03/26</td><td class="check">X</td><td class="check">X</td><td></td><td class="check">X</td><td></td><td class="check">X</td></tr>
+    <tr><td colspan="8" class="group">Réalisations en milieu professionnel — 1ère année</td></tr>
+    <tr><td>Stage Préfecture de Bobigny — HelpDesk</td><td>Mai 2025 → Juin 2025</td><td class="check">X</td><td class="check">X</td><td></td><td class="check">X</td><td class="check">X</td><td class="check">X</td></tr>
+    <tr><td colspan="8" class="group">Réalisations en milieu professionnel — 2ème année</td></tr>
+    <tr><td colspan="8" style="color:#aaa;font-style:italic;text-align:center">À compléter</td></tr>
+  </tbody>
+</table>
+<div style="font-size:9px;color:#aaa;text-align:center;margin-top:8px">BTS SIO SLAM · Session 2026 · Lycée Robert Schuman, Dugny · Ouhaimmed Soufiane</div>
+</body></html>`;
+        const a=document.createElement('a');
+        a.href=URL.createObjectURL(new Blob([h],{type:'text/html;charset=utf-8'}));
+        a.download='Tableau-Synthese-E5-Ouhaimmed-Soufiane.html';
+        document.body.appendChild(a);a.click();document.body.removeChild(a);
     }
+
+    /* télécharger CV */
     function downloadCV(){
         const h=`<!DOCTYPE html>
 <html lang="fr"><head><meta charset="UTF-8"><title>CV — Soufiane Ouhaimmed</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Instrument Sans',sans-serif;background:#fff;color:#111;font-size:13px;line-height:1.65;padding:44px 52px}.top{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:18px;border-bottom:2px solid #111;margin-bottom:28px}.name{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;letter-spacing:-0.04em;line-height:0.95}.name em{font-style:italic;font-weight:400;color:#666}.sub{font-size:.82rem;color:#555;margin-top:7px}.contacts{text-align:right;font-size:.78rem;color:#555;line-height:2.1}.contacts a{color:#111;text-decoration:none}.grid{display:grid;grid-template-columns:1fr 190px;gap:36px}.sec{margin-bottom:22px}.sec-t{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #eee}.row{display:flex;gap:14px;margin-bottom:11px}.date{font-size:.74rem;color:#aaa;min-width:68px;padding-top:2px}.jt{font-weight:500;font-size:.9rem}.jo{font-size:.78rem;color:#666}.jd{font-size:.77rem;color:#666;margin-top:3px;line-height:1.7}.tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:5px}.tag{font-size:.68rem;background:#f3f3f0;color:#444;padding:2px 7px;border-radius:2px}.si{padding:5px 0;border-bottom:1px solid #f3f3f0;font-size:.8rem}.si:last-child{border:none}.si strong{display:block;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#bbb;margin-bottom:1px}.st{display:flex;flex-wrap:wrap;gap:3px;margin-top:4px}.s{font-size:.68rem;background:#f3f3f0;padding:2px 7px;border-radius:2px;color:#444}.foot{margin-top:22px;padding-top:12px;border-top:1px solid #eee;font-size:.7rem;color:#bbb;text-align:center}</style>
 </head><body>
-<div class="top"><div><div class="name">Soufiane<br><em>Ouhaimmed</em></div><div class="sub">BTS SIO SLAM &nbsp;·&nbsp; Développeur en formation &nbsp;·&nbsp; Session 2025</div></div><div class="contacts">souhaimmed@gmail.com<br>07 69 15 39 56<br>Garges-lès-Gonesse (95)<br><a href="https://linkedin.com/in/soufiane-ouhaimmed-737890342">LinkedIn</a></div></div>
+<div class="top"><div><div class="name">Soufiane<br><em>Ouhaimmed</em></div><div class="sub">BTS SIO SLAM &nbsp;·&nbsp; Développeur en formation &nbsp;·&nbsp; Session 2026</div></div><div class="contacts">souhaimmed@gmail.com<br>07 69 15 39 56<br>Garges-lès-Gonesse (95)<br><a href="https://linkedin.com/in/soufiane-ouhaimmed-737890342">LinkedIn</a></div></div>
 <div class="grid"><div>
 <div class="sec"><div class="sec-t">Profil</div><p style="font-size:.83rem;color:#444;line-height:1.8">Étudiant en BTS SIO SLAM passionné par le développement logiciel et les nouvelles technologies. Compétences en PHP, Java, Python, JS, Symfony, JavaFX, MySQL et systèmes (Debian, Windows). Veille active sur l'IA dans les jeux vidéo.</p></div>
-<div class="sec"><div class="sec-t">Expérience</div><div class="row"><div class="date">2024</div><div><div class="jt">Stagiaire — Support informatique</div><div class="jo">Préfecture de Bobigny · Seine-Saint-Denis (93)</div><div class="jd">Gestion parc informatique, support utilisateurs, diagnostic incidents, droits NTFS, accompagnement.</div><div class="tags"><span class="tag">Windows</span><span class="tag">NTFS</span><span class="tag">Hyper-V</span><span class="tag">Gestion de parc</span></div></div></div></div>
-<div class="sec"><div class="sec-t">Formation</div><div class="row"><div class="date">2023–2025</div><div><div class="jt">BTS SIO — Option SLAM</div><div class="jo">Lycée Robert Schuman · Dugny (93)</div><div class="jd">Services Informatiques aux Organisations — Solutions Logicielles et Applications Métiers.</div></div></div></div>
-<div class="sec"><div class="sec-t">Réalisations</div>
-<div class="row"><div class="date">2024</div><div><div class="jt">Application web Symfony</div><div class="jd">Application MVC, authentification, CRUD, MySQL, Git/GitHub.</div></div></div>
-<div class="row"><div class="date">2024</div><div><div class="jt">Application JavaFX de gestion</div><div class="jd">Application desktop Java, interface graphique, BDD MySQL, UML.</div></div></div>
-<div class="row"><div class="date">2023–24</div><div><div class="jt">Site web dynamique PHP/MySQL</div><div class="jd">MCD/MLD, back-end PHP, rapport de tests, déploiement Apache.</div></div></div>
+<div class="sec"><div class="sec-t">Expérience</div><div class="row"><div class="date">Mai–Juin 2025</div><div><div class="jt">Stagiaire — HelpDesk / Support informatique</div><div class="jo">Préfecture de Bobigny · Seine-Saint-Denis (93)</div><div class="jd">Gestion parc informatique, support utilisateurs, diagnostic incidents, droits NTFS, accompagnement.</div><div class="tags"><span class="tag">Windows</span><span class="tag">NTFS</span><span class="tag">Hyper-V</span><span class="tag">Gestion de parc</span></div></div></div></div>
+<div class="sec"><div class="sec-t">Formation</div><div class="row"><div class="date">2024–2026</div><div><div class="jt">BTS SIO — Option SLAM</div><div class="jo">Lycée Robert Schuman · Dugny (93)</div><div class="jd">Services Informatiques aux Organisations — Solutions Logicielles et Applications Métiers.</div></div></div></div>
+<div class="sec"><div class="sec-t">Réalisations (sélection)</div>
+<div class="row"><div class="date">2025</div><div><div class="jt">HSP — PHP/Symfony</div><div class="jd">Application MVC complète, 6 compétences couvertes, travail en équipe Git/GitHub.</div></div></div>
+<div class="row"><div class="date">2025</div><div><div class="jt">WebCinema — PHP</div><div class="jd">Application web dynamique avec gestion de catalogue et authentification.</div></div></div>
+<div class="row"><div class="date">2025</div><div><div class="jt">StartJavaFX — Java/JavaFX</div><div class="jd">Application desktop avec interface graphique et connexion base de données.</div></div></div>
 <div class="row"><div class="date">2023–25</div><div><div class="jt">Veille IA &amp; jeux vidéo</div><div class="jd">Feedly, Daily.dev, synthèses régulières, profil LinkedIn.</div></div></div>
 </div></div>
 <div>
@@ -550,7 +744,7 @@
 <div class="sec"><div class="sec-t">Veille</div><div class="si"><strong>Sujet</strong>IA dans les jeux vidéo</div><div class="si"><strong>Outils</strong>Feedly · Daily.dev</div></div>
 <div class="sec"><div class="sec-t">Contact</div><div class="si"><strong>Email</strong>souhaimmed@gmail.com</div><div class="si"><strong>Tel</strong>07 69 15 39 56</div><div class="si"><strong>Ville</strong>Garges-lès-Gonesse (95)</div><div class="si"><strong>LinkedIn</strong>soufiane-ouhaimmed</div></div>
 </div></div>
-<div class="foot">BTS SIO SLAM · Session 2025 · Lycée Robert Schuman, Dugny</div>
+<div class="foot">BTS SIO SLAM · Session 2026 · Lycée Robert Schuman, Dugny</div>
 </body></html>`;
         const a=document.createElement('a');
         a.href=URL.createObjectURL(new Blob([h],{type:'text/html;charset=utf-8'}));
