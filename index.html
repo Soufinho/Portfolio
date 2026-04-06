@@ -652,39 +652,13 @@
     },{threshold:0.08});
     document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
 
-    /* télécharger tableau de synthèse (HTML imprimable) */
-    function downloadSynthese() {
-        const link = document.createElement('a');
-        link.href = 'Tableau_de_Synthèse_Ouhaimmed_Soufiane.xlsx';
-        link.download = 'Tableau_de_Synthèse_Ouhaimmed_Soufiane.xlsx';
-        link.click();
+    function downloadCV() {
+        window.open('Ouhaimmed_Soufiane_CV.pdf', '_blank');
     }
 
-    /* télécharger CV */
-    function downloadCV(){
-        const h=`<!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><title>CV — Soufiane Ouhaimmed</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Instrument Sans',sans-serif;background:#fff;color:#111;font-size:13px;line-height:1.65;padding:44px 52px}.top{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:18px;border-bottom:2px solid #111;margin-bottom:28px}.name{font-family:'Syne',sans-serif;font-size:2.4rem;font-weight:800;letter-spacing:-0.04em;line-height:0.95}.name em{font-style:italic;font-weight:400;color:#666}.sub{font-size:.82rem;color:#555;margin-top:7px}.contacts{text-align:right;font-size:.78rem;color:#555;line-height:2.1}.contacts a{color:#111;text-decoration:none}.grid{display:grid;grid-template-columns:1fr 190px;gap:36px}.sec{margin-bottom:22px}.sec-t{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#999;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #eee}.row{display:flex;gap:14px;margin-bottom:11px}.date{font-size:.74rem;color:#aaa;min-width:68px;padding-top:2px}.jt{font-weight:500;font-size:.9rem}.jo{font-size:.78rem;color:#666}.jd{font-size:.77rem;color:#666;margin-top:3px;line-height:1.7}.tags{display:flex;flex-wrap:wrap;gap:3px;margin-top:5px}.tag{font-size:.68rem;background:#f3f3f0;color:#444;padding:2px 7px;border-radius:2px}.si{padding:5px 0;border-bottom:1px solid #f3f3f0;font-size:.8rem}.si:last-child{border:none}.si strong{display:block;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#bbb;margin-bottom:1px}.st{display:flex;flex-wrap:wrap;gap:3px;margin-top:4px}.s{font-size:.68rem;background:#f3f3f0;padding:2px 7px;border-radius:2px;color:#444}.foot{margin-top:22px;padding-top:12px;border-top:1px solid #eee;font-size:.7rem;color:#bbb;text-align:center}</style>
-</head><body>
-<div class="top"><div><div class="name">Soufiane<br><em>Ouhaimmed</em></div><div class="sub">BTS SIO SLAM &nbsp;·&nbsp; Développeur en formation &nbsp;·&nbsp; Session 2026</div></div><div class="contacts">souhaimmed@gmail.com<br>07 69 15 39 56<br>Garges-lès-Gonesse (95)<br><a href="https://linkedin.com/in/soufiane-ouhaimmed-737890342">LinkedIn</a></div></div>
-<div class="grid"><div>
-<div class="sec"><div class="sec-t">Profil</div><p style="font-size:.83rem;color:#444;line-height:1.8">Étudiant en BTS SIO SLAM passionné par le développement logiciel et les nouvelles technologies. Compétences en PHP, Java, Python, JS, Symfony, JavaFX, MySQL et systèmes (Debian, Windows). Veille active sur l'IA dans les jeux vidéo.</p></div>
-<div class="sec"><div class="sec-t">Expérience</div><div class="row"><div class="date">Mai–Juin 2025</div><div><div class="jt">Stagiaire — HelpDesk / Support informatique</div><div class="jo">Préfecture de Bobigny · Seine-Saint-Denis (93)</div><div class="jd">Gestion parc informatique, support utilisateurs, diagnostic incidents, droits NTFS, accompagnement.</div><div class="tags"><span class="tag">Windows</span><span class="tag">NTFS</span><span class="tag">Hyper-V</span><span class="tag">Gestion de parc</span></div></div></div></div>
-<div class="sec"><div class="sec-t">Formation</div><div class="row"><div class="date">2024–2026</div><div><div class="jt">BTS SIO — Option SLAM</div><div class="jo">Lycée Robert Schuman · Dugny (93)</div><div class="jd">Services Informatiques aux Organisations — Solutions Logicielles et Applications Métiers.</div></div></div></div>
-<div class="sec"><div class="sec-t">Réalisations (sélection)</div>
-<div class="row"><div class="date">2025</div><div><div class="jt">HSP — PHP/Symfony</div><div class="jd">Application MVC complète, 6 compétences couvertes, travail en équipe Git/GitHub.</div></div></div>
-<div class="row"><div class="date">2025</div><div><div class="jt">WebCinema — PHP</div><div class="jd">Application web dynamique avec gestion de catalogue et authentification.</div></div></div>
-<div class="row"><div class="date">2025</div><div><div class="jt">StartJavaFX — Java/JavaFX</div><div class="jd">Application desktop avec interface graphique et connexion base de données.</div></div></div>
-<div class="row"><div class="date">2023–25</div><div><div class="jt">Veille IA &amp; jeux vidéo</div><div class="jd">Feedly, Daily.dev, synthèses régulières, profil LinkedIn.</div></div></div>
-</div></div>
-<div>
-<div class="sec"><div class="sec-t">Langages</div><div class="st"><span class="s">PHP</span><span class="s">Java</span><span class="s">Python</span><span class="s">HTML5</span><span class="s">CSS3</span><span class="s">JavaScript</span><span class="s">SQL</span></div></div>
-<div class="sec"><div class="sec-t">Frameworks</div><div class="st"><span class="s">Symfony</span><span class="s">jQuery</span><span class="s">Bootstrap</span><span class="s">JavaFX</span></div></div>
-<div class="sec"><div class="sec-t">Bases de données</div><div class="st"><span class="s">MySQL</span><span class="s">MariaDB</span></div></div>
-<div class="sec"><div class="sec-t">Systèmes &amp; Réseau</div><div class="st"><span class="s">Debian</span><span class="s">Windows</span><span class="s">Apache</span><span class="s">Hyper-V</span><span class="s">VirtualBox</span></div></div>
-<div class="sec"><div class="sec-t">Outils</div><div class="st"><span class="s">JetBrains</span><span class="s">Git</span><span class="s">GitHub</span><span class="s">Suite Office</span></div></div>
-<div class="sec"><div class="sec-t">Veille</div><div class="si"><strong>Sujet</strong>IA dans les jeux vidéo</div><div class="si"><strong>Outils</strong>Feedly · Daily.dev</div></div>
-<div class="sec"><div class="sec-t">Contact</div><div class="si"><strong>Email</strong>souhaimmed@gmail.com</div><div class="si"><strong>Tel</strong>07 69 15 39 56</div><div class="si"><strong>Ville</strong>Garges-lès-Gonesse (95)</div><div class="si"><strong>LinkedIn</strong>soufiane-ouhaimmed</div></div>
-</div></div>
-<div class="foot">BTS SIO SLAM · Session 2026 · Lycée Robert Schuman,
+    function downloadSynthese() {
+        window.open('Tableau_de_Synthèse_Ouhaimmed_Soufiane.xlsx', '_blank');
+    }
+</script>
+</body>
+</html>
