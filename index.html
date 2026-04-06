@@ -171,7 +171,7 @@
         .comp-legend-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; color: var(--muted); }
         .comp-legend-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
 
-        .veille-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); border: 1px solid var(--border); }
+        .veille-layout { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--border); border: 1px solid var(--border); }
         .veille-card { background: var(--bg); padding: 3rem; position: relative; overflow: hidden; transition: background 0.3s; }
         .veille-card:hover { background: var(--surface); }
         .veille-accent { position: absolute; top: -60px; right: -60px; width: 180px; height: 180px; border-radius: 50%; background: var(--accent-glow); filter: blur(60px); pointer-events: none; opacity: 0; transition: opacity 0.5s; }
@@ -191,8 +191,7 @@
         footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
         footer a:hover { color: var(--accent); }
         #progress { position: fixed; top: 0; left: 0; height: 2px; background: var(--accent); z-index: 9999; width: 0; }
-        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
         @media (max-width: 960px) {
             nav { padding: 0 1.5rem; }
             .nav-links li:not(:last-child) { display: none; }
@@ -280,7 +279,7 @@
             </div>
             <div class="reveal">
                 <ul class="contact-list">
-                    <li><span class="c-label">Email</span><a href="mailto:souhaimmed@gmail.com" class="c-val">souhaimmed@gmail.com</a></li>
+                    <li><span class="c-label">Email</span><a href="/cdn-cgi/l/email-protection#23504c564b424a4e4e464763444e424a4f0d404c4e" class="c-val"><span class="__cf_email__" data-cfemail="95e6fae0fdf4fcf8f8f0f1d5f2f8f4fcf9bbf6faf8">[email&#160;protected]</span></a></li>
                     <li><span class="c-label">Téléphone</span><a href="tel:0769153956" class="c-val">07 69 15 39 56</a></li>
                     <li><span class="c-label">Localisation</span><span class="c-val">Garges-lès-Gonesse (95)</span></li>
                     <li><span class="c-label">Établissement</span><span class="c-val">Lycée Robert Schuman, Dugny</span></li>
@@ -596,12 +595,41 @@
             <h2 class="s-title">Veille <em>technologique</em></h2>
         </div>
         <div class="veille-layout reveal">
+            <!-- Carte gauche : description de la veille -->
             <div class="veille-card">
                 <div class="veille-accent"></div>
                 <div class="v-icon">◈</div>
                 <div class="v-title">IA dans les jeux vidéo</div>
                 <div class="v-desc">Suivi régulier des avancées de l'IA appliquée au jeu vidéo : comportements procéduraux de PNJ, génération de contenu, pathfinding avancé, intégration de LLMs dans les moteurs de jeu. Lecture de publications techniques et articles de recherche.</div>
                 <div class="v-tools"><span class="v-tool">Feedly</span><span class="v-tool">Daily.dev</span></div>
+            </div>
+
+            <!-- Article 1 : Roblox -->
+            <div class="veille-card">
+                <div class="veille-accent"></div>
+                <div class="v-icon">◎</div>
+                <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem;">Game Developer · Février 2026</div>
+                <div class="v-title">Roblox announces AI-powered object and scene creation model</div>
+                <div class="v-desc">Roblox a lancé la génération <strong style="color:var(--text);">4D</strong> en bêta via son modèle <strong style="color:var(--text);">Cube Foundation Model</strong>. Les objets générés par prompt texte sont entièrement fonctionnels (une voiture roule, un avion vole). Plus de 160 000 objets créés en accès anticipé, avec +64 % de temps de jeu en moyenne. L'objectif : générer des scènes complètes (assets, code, animations) via langage naturel.</div>
+                <div class="v-tools">
+                    <span class="v-tool">Cube 3D</span>
+                    <span class="v-tool">4D Generation</span>
+                    <a href="https://www.gamedeveloper.com/business/roblox-announces-ai-powered-object-scene-creation-model" target="_blank" style="font-size:0.75rem;padding:0.3rem 0.8rem;border:1px solid var(--border-bright);color:var(--muted);border-radius:2px;background:transparent;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Lire ↗</a>
+                </div>
+            </div>
+
+            <!-- Article 2 : Nexon -->
+            <div class="veille-card">
+                <div class="veille-accent"></div>
+                <div class="v-icon">◇</div>
+                <div style="font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem;">Game Developer · Novembre 2025</div>
+                <div class="v-title">Nexon CEO believes every game company is now using AI</div>
+                <div class="v-desc">Le CEO de Nexon <strong style="color:var(--text);">Junghun Lee</strong> affirme qu'il faut supposer que <strong style="color:var(--text);">toutes les entreprises du jeu utilisent désormais l'IA</strong>. Contexte : controverse autour d'Arc Raiders (Embark Studios) pour son usage de l'IA dans la création de contenu. Pour Lee, si tout le monde utilise les mêmes outils, <strong style="color:var(--text);">la créativité humaine reste le seul vrai différenciateur</strong>.</div>
+                <div class="v-tools">
+                    <span class="v-tool">IA générative</span>
+                    <span class="v-tool">Nexon</span>
+                    <a href="https://www.gamedeveloper.com/business/nexon-ceo-it-s-important-to-assume-that-every-game-company-is-now-using-ai" target="_blank" style="font-size:0.75rem;padding:0.3rem 0.8rem;border:1px solid var(--border-bright);color:var(--muted);border-radius:2px;background:transparent;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--muted)'">Lire ↗</a>
+                </div>
             </div>
         </div>
     </div>
@@ -617,14 +645,14 @@
 <footer>
     <span>Soufiane Ouhaimmed — Portfolio BTS SIO SLAM 2026</span>
     <div style="display:flex;gap:1.5rem;">
-        <a href="mailto:souhaimmed@gmail.com">Email</a>
+        <a href="/cdn-cgi/l/email-protection#cebda1bba6afa7a3a3abaa8ea9a3afa7a2e0ada1a3">Email</a>
         <a href="https://www.linkedin.com/in/soufiane-ouhaimmed-737890342/" target="_blank">LinkedIn</a>
         <a href="tel:0769153956">Téléphone</a>
     </div>
     <span>Lycée Robert Schuman · Dugny</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     /* cursor */
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursor-ring');
@@ -744,13 +772,4 @@ thead tr:last-child th{background:#f5f5f5;font-size:9px;color:#555;text-align:ce
 <div class="sec"><div class="sec-t">Veille</div><div class="si"><strong>Sujet</strong>IA dans les jeux vidéo</div><div class="si"><strong>Outils</strong>Feedly · Daily.dev</div></div>
 <div class="sec"><div class="sec-t">Contact</div><div class="si"><strong>Email</strong>souhaimmed@gmail.com</div><div class="si"><strong>Tel</strong>07 69 15 39 56</div><div class="si"><strong>Ville</strong>Garges-lès-Gonesse (95)</div><div class="si"><strong>LinkedIn</strong>soufiane-ouhaimmed</div></div>
 </div></div>
-<div class="foot">BTS SIO SLAM · Session 2026 · Lycée Robert Schuman, Dugny</div>
-</body></html>`;
-        const a=document.createElement('a');
-        a.href=URL.createObjectURL(new Blob([h],{type:'text/html;charset=utf-8'}));
-        a.download='CV-Soufiane-Ouhaimmed.html';
-        document.body.appendChild(a);a.click();document.body.removeChild(a);
-    }
-</script>
-</body>
-</html>
+<div class="foot">BTS SIO SLAM · Session 2026 · Lycée Robert Schuman,
